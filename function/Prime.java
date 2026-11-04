@@ -17,8 +17,18 @@ class Prime {
 
     }
 
+    static void printPrime(int x) {
+        int i = 1;
+        while (i < x) {
+            boolean isPrime = isPrime(i);
+            if (isPrime) {
+                System.out.println(i);
+            }
+            i++;
+        }
+    }
+
     public static void main(String[] args) {
-        int n = 65;
-        System.out.println(n + (isPrime(n) ? " is a prime number!" : " is not a prime"));
+        printPrime(100);
     }
 }
