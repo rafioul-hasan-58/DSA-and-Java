@@ -1,5 +1,5 @@
 
-class CheckPrime {
+class Prime {
     static boolean isPrime(int x) {
         if (x <= 1)
             return false;
