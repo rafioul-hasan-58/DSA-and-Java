@@ -1,19 +1,24 @@
 
 class CheckPrime {
-    static void checkPrime(int x) {
-        if (x != 2 && x % 2 == 0) {
-            System.out.println(x + " " + "is not a prime");
-        } else if (x != 3 && x % 3 == 0) {
-            System.out.println(x + " " + "is not a prime");
-        } else if (x != 5 && x % 5 == 0) {
-            System.out.println(x + " " + "is not a prime");
+    static boolean isPrime(int x) {
+        if (x <= 1)
+            return false;
+        if (x == 2)
+            return true;
+        if (x % 2 == 0)
+            return false;
 
-        } else {
-            System.out.println(x + " " + "is a prime number!");
+        for (int i = 3; (long) i * i <= x; i += 2) {
+            if (x % i == 0)
+                return false;
         }
+
+        return true;
+
     }
 
     public static void main(String[] args) {
-        checkPrime(0);
+        int n = 65;
+        System.out.println(n + (isPrime(n) ? " is a prime number!" : " is not a prime"));
     }
 }
