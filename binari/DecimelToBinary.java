@@ -6,7 +6,7 @@ public class DecimelToBinary {
         int pow = 1;
         while (n > 0) {
             int rem = n % 2;
-            n = n / 2;
+            n /= 2;
             ans += (rem * pow);
             pow *= 10;
         }
@@ -15,6 +15,6 @@ public class DecimelToBinary {
     }
 
     public static void main(String[] args) {
-        makeBinary(8);
+        makeBinary(101);
     }
 }
