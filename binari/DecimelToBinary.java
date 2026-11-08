@@ -15,6 +15,6 @@ public class DecimelToBinary {
     }
 
     public static void main(String[] args) {
-        makeBinary(101);
+        makeBinary(19);
     }
 }

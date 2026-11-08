@@ -6,7 +6,7 @@ public class BinaryToDecimenl {
         int pow = 1;
         while (binary > 0) {
             int lastDigit = binary % 10;
-            ans = ans + lastDigit * pow;
+            ans += lastDigit * pow;
             binary /= 10;
             pow *= 2;
         }
@@ -15,6 +15,6 @@ public class BinaryToDecimenl {
     }
 
     public static void main(String[] args) {
-        makeDecimel(1000);
+        makeDecimel(11000);
     }
 }
