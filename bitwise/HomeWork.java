@@ -13,7 +13,18 @@ public class HomeWork {
     // return n == 1;
     // }
 
+    static int reverseInt(int n) {
+        int reversed = 0;
+        while (n > 0) {
+            int digit = n % 10;
+            reversed = reversed * 10 + digit;
+            n /= 10;
+        }
+        return reversed;
+    }
+
     public static void main(String[] args) {
-        System.out.println(powerOfTwo(12));
+        // System.out.println(powerOfTwo(12));
+        System.out.println(reverseInt(1234));
     }
 }
