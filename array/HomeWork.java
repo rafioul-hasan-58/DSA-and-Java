@@ -1,5 +1,7 @@
 package array;
 
+import java.util.ArrayList;
+
 public class HomeWork {
 
     static void sumOfArray(int[] arr) {
@@ -44,8 +46,51 @@ public class HomeWork {
 
     }
 
+    static int[] removeIndex(int[] arr, int index) {
+        int[] newArr = new int[arr.length - 1];
+
+        for (int i = 0, j = 0; i < arr.length; i++) {
+            if (i != index) {
+                newArr[j] = arr[i];
+                j++;
+            }
+        }
+
+        return newArr;
+    }
+
+    static void printUnique(int[] arr) {
+        ArrayList<Integer> dup = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+
+            int[] newArr = removeIndex(arr, i);
+            for (int j = 0; j < newArr.length; j++) {
+                if (arr[i] == newArr[j]) {
+                    dup.add(newArr[j]);
+                }
+            }
+        }
+        ArrayList<Integer> mainArr = new ArrayList<>();
+
+        for (int num : arr) {
+            mainArr.add(num);
+        }
+
+        for (int i = 0; i < dup.size(); i++) {
+            for (int j = 0; j < mainArr.size(); j++) {
+                if(dup.get(i)==mainArr.get(j)){
+                    mainArr.remove(j);
+                }
+            }
+        }
+
+        System.out.println(mainArr);
+      
+
+    }
+
     public static void main(String[] args) {
-        int[] arr = { 1, 2, 3, 4 };
-        swapMinMax(arr);
+        int[] arr = { 1, 2, 3, 3, 4, 4 };
+        printUnique(arr);
     }
 }
