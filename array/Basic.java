@@ -19,15 +19,23 @@ public class Basic {
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] > max) {
                 max = numbers[i];
-                maxIdx=i;
+                maxIdx = i;
             }
         }
         System.out.println(maxIdx);
     }
 
+    static void chnageArray(int[] numbers) {
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] *= 2;
+        }
+    }
+
     public static void main(String[] args) {
         int[] numbers = { -12, 2, 34, 4, 25 };
-        smallestValue(numbers);
-        largestValue(numbers);
+        System.out.println("before:" + java.util.Arrays.toString(numbers));
+        chnageArray(numbers);
+        System.out.println("after:" + java.util.Arrays.toString(numbers));
+
     }
 }
