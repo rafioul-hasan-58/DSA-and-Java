@@ -42,8 +42,24 @@ public class Basic {
 
     }
 
+    static int[] reverseArray(int[] numbers) {
+        int start = 0;
+        int end = numbers.length - 1;
+
+        while (start < end) {
+            int temp = numbers[start];
+            numbers[start] = numbers[end];
+            numbers[end] = temp;
+
+            start++;
+            end--;
+        }
+        return numbers;
+    }
+
     public static void main(String[] args) {
-        int[] numbers = { -12, 2, 34, 4, 25 };
-        System.out.println(linerSearch(numbers, 25));
+        int[] numbers = {1,2,3,4,5};
+        int[] r = reverseArray(numbers);
+        System.out.println(java.util.Arrays.toString(r));
     }
 }
