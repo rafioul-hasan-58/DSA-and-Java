@@ -31,11 +31,19 @@ public class Basic {
         }
     }
 
+    static int linerSearch(int[] numbers, int tar) {
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == tar) {
+                return i;
+            }
+        }
+        return -1;
+
+    }
+
     public static void main(String[] args) {
         int[] numbers = { -12, 2, 34, 4, 25 };
-        System.out.println("before:" + java.util.Arrays.toString(numbers));
-        chnageArray(numbers);
-        System.out.println("after:" + java.util.Arrays.toString(numbers));
-
+        System.out.println(linerSearch(numbers, 25));
     }
 }
