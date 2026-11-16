@@ -78,19 +78,29 @@ public class HomeWork {
 
         for (int i = 0; i < dup.size(); i++) {
             for (int j = 0; j < mainArr.size(); j++) {
-                if(dup.get(i)==mainArr.get(j)){
+                if (dup.get(i) == mainArr.get(j)) {
                     mainArr.remove(j);
                 }
             }
         }
 
         System.out.println(mainArr);
-      
 
     }
 
+    static void intersection(int[] arr1, int[] arr2) {
+        for (int i = 0; i < arr1.length; i++) {
+            for (int j = 0; j < arr2.length; j++) {
+                if (arr1[i] == arr2[j]) {
+                    System.out.println(arr1[i]);
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        int[] arr = { 1, 2, 3, 3, 4, 4 };
-        printUnique(arr);
+        int[] arr1 = { 1, 2, 3, 4, 5 };
+        int[] arr2 = { 6, 7, 3, 1 };
+        intersection(arr1, arr2);
     }
 }
