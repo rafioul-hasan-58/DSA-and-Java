@@ -119,11 +119,12 @@ public class HomeWork {
             start++;
             end--;
         }
-        System.out.println(arr);
+        // System.out.println(arr);
     }
 
     public static void main(String[] args) {
         ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(10, 20, 30, 40, 50));
         reverseArray(arr);
+        System.out.println(arr);
     }
 }
