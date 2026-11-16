@@ -1,6 +1,7 @@
 package array;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class HomeWork {
 
@@ -98,9 +99,31 @@ public class HomeWork {
         }
     }
 
+    static int linearSearch(ArrayList<Integer> arr, int tar) {
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr.get(i) == tar) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    static void reverseArray(ArrayList<Integer> arr) {
+        // ArrayList<Integer> reversed = new ArrayList<>();
+        int start = 0;
+        int end = arr.size() - 1;
+        while (start < end) {
+            int temp = arr.get(start);
+            arr.set(start, arr.get(end));
+            arr.set(end, temp);
+            start++;
+            end--;
+        }
+        System.out.println(arr);
+    }
+
     public static void main(String[] args) {
-        int[] arr1 = { 1, 2, 3, 4, 5 };
-        int[] arr2 = { 6, 7, 3, 1 };
-        intersection(arr1, arr2);
+        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(10, 20, 30, 40, 50));
+        reverseArray(arr);
     }
 }
