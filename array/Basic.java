@@ -1,5 +1,9 @@
 package array;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Basic {
     static void smallestValue(int[] numbers) {
         int min = numbers[0];
@@ -57,9 +61,31 @@ public class Basic {
         return numbers;
     }
 
+    static ArrayList<Integer> sumPair(ArrayList<Integer> nums, int tar) {
+
+        int str = 0;
+        int end = nums.size() - 1;
+        ArrayList<Integer> indexes = new ArrayList<>();
+
+        while (str < end) {
+            int pairSum = nums.get(str) + nums.get(end);
+
+            if (pairSum < tar) {
+                str++;
+            } else if (pairSum > tar) {
+                end--;
+            } else {
+                indexes.add(str);
+                indexes.add(end);
+                return indexes;
+            }
+        }
+        return indexes;
+    }
+
     public static void main(String[] args) {
-        int[] numbers = {1,2,3,4,5};
-        int[] r = reverseArray(numbers);
-        System.out.println(java.util.Arrays.toString(r));
+        ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(2, 7, 11, 15));
+        int target = 26;
+        System.out.println(sumPair(nums, target));
     }
 }

@@ -38,8 +38,21 @@ public class LeetCode {
         System.out.println(maxProfit);
     }
 
+    static void mergeArray(int[] arr1, int m, int[] arr2, int n) {
+        int[] newArray = new int[m + n];
+        for (int i = 0; i < m; i++) {
+            newArray[i] = arr1[i];
+        }
+        for (int i = m; i < newArray.length; i++) {
+            newArray[i] = arr2[i - m];
+        }
+        java.util.Arrays.sort(newArray);
+        System.out.println(java.util.Arrays.toString(newArray));
+    }
+
     public static void main(String[] args) {
-        int[] arr = { 7, 1, 5, 3, 6, 4 };
-        maxProfit1(arr);
+        int[] arr1 = { };
+        int[] arr2 = { 2, 5, 6 };
+        mergeArray(arr1, arr1.length, arr2, arr2.length);
     }
 }
