@@ -83,9 +83,59 @@ public class Basic {
         return indexes;
     }
 
+    static void majorityElement(ArrayList<Integer> nums) {
+        int n = nums.size();
+        for (int val : nums) {
+            int freq = 0;
+            for (int ele : nums) {
+                if (ele == val) {
+                    freq++;
+                }
+            }
+            if (freq > n / 2) {
+                System.out.println(val);
+            }
+        }
+    }
+
+    static void removeDuplicate(int[] nums) {
+        int str = nums[0];
+        int[] uniqueArray = new int[nums.length];
+        int arrayIndex = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != str) {
+                uniqueArray[arrayIndex] = str;
+                str = nums[i];
+                arrayIndex++;
+            }
+        }
+        System.out.println(java.util.Arrays.toString(uniqueArray));
+    }
+
+    static void removeDuplicateTwo(int[] nums) {
+        int idx = 0;
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[j] != nums[idx]) {
+                idx++;
+                nums[idx] = nums[j];
+            }
+        }
+        System.out.println(java.util.Arrays.toString(nums));
+    }
+
+    static int removeElement(int[] nums, int val) {
+        int idx = 0;
+        for (int j = 0; j < nums.length; j++) {
+            if (nums[j] != val) {
+                nums[idx] = nums[j];
+                idx++;
+            }
+        }
+        return idx;
+    }
+
     public static void main(String[] args) {
-        ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(2, 7, 11, 15));
-        int target = 26;
-        System.out.println(sumPair(nums, target));
+        int[] nums = { 3, 2, 2, 3 };
+        removeElement(nums, 3);
     }
 }
